@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TilesController } from './tiles/tiles.controller';
 import { TilesService } from './tiles/tiles.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [],
+  imports: [ConfigModule.forRoot()],
   controllers: [AppController, TilesController],
   providers: [AppService, TilesService],
 })

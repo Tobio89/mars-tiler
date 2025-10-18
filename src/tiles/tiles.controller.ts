@@ -21,7 +21,6 @@ export class TilesController {
     if (image_name === 'base_files' || image_name === 'annotated_files') {
       const image_type = image_name === 'base_files' ? 'base' : 'annotated';
       const tilePath = this.tilesService.getTilePath(image_type, z, coords);
-      console.log(tilePath);
       const file = createReadStream(tilePath);
       return new StreamableFile(file);
     }
