@@ -7,10 +7,12 @@ import { BaseTileModule } from './base-tile/base-tile.module';
 import { AnnotationTileModule } from './annotation-tile/annotation-tile.module';
 import { BaseTileService } from './base-tile/base-tile.service';
 import { AnnotationTileService } from './annotation-tile/annotation-tile.service';
+import { TilesController } from './tiles/tiles.controller';
+import { TilesService } from './tiles/tiles.service';
 
 @Module({
   imports: [BaseTileModule, AnnotationTileModule],
-  controllers: [AppController, BaseTileController, AnnotationTileController],
-  providers: [AppService, BaseTileService, AnnotationTileService],
+  controllers: [AppController, BaseTileController, AnnotationTileController, TilesController],
+  providers: [AppService, BaseTileService, AnnotationTileService, TilesService],
 })
 export class AppModule {}
