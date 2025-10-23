@@ -1,0 +1,158 @@
+{
+  "mountains": [
+    {
+      "name": "Olympus Mons",
+      "point": {
+        "x": 2132.011258438827,
+        "y": 3263.3036650237996
+      },
+      "description": "The tallest mountain in the Solar System, Olympus Mons is a shield volcano in the Tharsis Rise region. It's 21.9km tall, which is 2.5 times the height of Mount Everest. It's also 600km wide, which would make for a tedious hike!"
+    },
+    {
+      "name": "Ascraeus Mons",
+      "point": {
+        "x": 3445.592073861144,
+        "y": 3589.291827074978
+      },
+      "description": "Ascraeus Mons is a shield volcano on Mars. It is the northernmost of a group of volcanoes called the Tharsis Montes. At 18.2km, it's also the tallest. "
+    },
+    {
+      "name": "Pavonis Mons",
+      "point": {
+        "x": 3059.443226310619,
+        "y": 4074.9096357166736
+      },
+      "description": "Pavonis Mons is a 14km tall shield volcano, the middle of the Tharsis Montes. Located close to the equator, it's been proposed as a location for a space elevator!"
+    },
+    {
+      "name": "Arsia Mons",
+      "point": {
+        "x": 2732.332815846733,
+        "y": 4508.71179758772
+      },
+      "description": "Arsia Mons is the southernmost volcano in the Tharsis Montes. It's almost 20km tall. Aside from Olympus, it's the largest known volcano by volume - 30 tiles the volume of Hawaii's Mauna Loa."
+    },
+    {
+      "name": "Tharsis Tholus",
+      "point": {
+        "x": 4042.5656441714927,
+        "y": 3482.6670459260763
+      },
+      "description": "Tharsis Tholus is a volcano on Mars. It is located in the Tharsis province of Mars and is approximately 120 kilometers (75 miles) in diameter."
+    },
+    {
+      "name": "Uranius Tholus",
+      "point": {
+        "x": 3756.6320633219184,
+        "y": 2905.7627347381926
+      },
+      "description": "Uranius Tholus is 4.2km tall, and 61.4km wide. It's apparently named after a classical albedo feature name. It belongs to the Uranius group of Volcanoes"
+    },
+    {
+      "name": "Ceraunius Tholus",
+      "point": {
+        "x": 3770.8582844983894,
+        "y": 3004.6845982676045
+      },
+      "description": "Also named after a classical albedo feature name, Ceraunius Tholus is 130km  across. With a height of about 8.5km, it's about the same height as Mount Everest."
+    },
+    {
+      "name": "Hecates Tholus",
+      "point": {
+        "x": 15047.13370799274,
+        "y": 2639.6218541799717
+      },
+      "description": "Hecates Tholus belongs to the Elysium volcano group. It's named after Hecate, the goddess of magic, sorcery, and the night."
+    },
+    {
+      "name": "Elysium Mons",
+      "point": {
+        "x": 14875.426832408035,
+        "y": 2974.5669531176222
+      },
+      "description": "Elysium Mons is one of the Elysium volcanoes. It's 14.1km tall above the Martian datum point, making it the fourth tallest mountain of Mars."
+    },
+    {
+      "name": "Albor Tholus",
+      "point": {
+        "x": 15030.305426050034,
+        "y": 3230.6520019288596
+      },
+      "description": "Albor Tholus is a volcano of the Elysium volcano group. It's 4.5km high, and 160km in diameter. It has a 30km wide and 3km deep caldera, which is very deep compared to those on Earth."
+    }
+  ],
+  "missionSites": [
+    {
+      "name": "Phoenix",
+      "point": {
+        "x": 2463.868247562734,
+        "y": 974.7197031886944
+      },
+      "description": "Phoenix was a Martian probe that landed in May 2000, and operated until November 2008. Its mission was to assess habitability of the region, and to find traces of water."
+    },
+    {
+      "name": "Viking 1",
+      "point": {
+        "x": 5905.507271952977,
+        "y": 3052.6904348960115
+      },
+      "description": "Viking 1 consisted of an orbiter and a lander. It was the first successful Martian lander! It landed July 1976, and lasted for 2,245 martian days (2,307 Earth days)."
+    },
+    {
+      "name": "Pathfinder",
+      "point": {
+        "x": 6645.7843451237095,
+        "y": 3195.5509227008897
+      },
+      "description": "Pathfinder consisted of a lander, and a rover called Sojourner. It landed in July 1997, and lasted for 85 days. It was the first successful usage of a rover!"
+    },
+    {
+      "name": "Opportunity",
+      "point": {
+        "x": 7931.528735367612,
+        "y": 4169.599703188695
+      },
+      "description": "Landing on Mars in January 2004, Opportunity was intended to only operate for 90 days, but it lasted for 5,203 martian days (5,479 Earth days or about 15 years). It's the longest-running Martian rover!"
+    },
+    {
+      "name": "Perseverance",
+      "point": {
+        "x": 11749.799954879807,
+        "y": 3234.512873920402
+      },
+      "description": "Part of the Mars 2020 mission, Perseverance landed in February 2021, and is still operating today. It's the largest and most advanced rover ever sent to Mars. It also came with a helicopter called Ingenuity, that made the first successful flight on another planet!"
+    },
+    {
+      "name": "Viking 2",
+      "point": {
+        "x": 14308.30141829444,
+        "y": 1896.8192153838163
+      },
+      "description": "Viking 2 was designed to be a copy of the Viking 1 mission, launching at the same time. It landed in September 1976, and lasted for about 3 years."
+    },
+    {
+      "name": "Insight",
+      "point": {
+        "x": 14386.25320733465,
+        "y": 3870.8914105057675
+      },
+      "description": "Insight was a Martian probe that landed in November 2018. It was designed to study deep inside Mars, studying 'marsquakes'. It was able to confirm that Mars' interior is still active! It lasted 4 years."
+    },
+    {
+      "name": "Curiosity",
+      "point": {
+        "x": 14451.16190609932,
+        "y": 4325.4475080667435
+      },
+      "description": "Curiosity is a Martian rover that's about the size of a car. It landed in August 2012, and it's still operating today, 13 years later!"
+    },
+    {
+      "name": "Spirit",
+      "point": {
+        "x": 16178.475076831028,
+        "y": 4767.016288554549
+      },
+      "description": "Spirit landed in January 2004. It was supposed to last 90 days, but managed to survive for 6 years! It was helped by winds that cleared dust from its solar panels. It met its end when it got stuck in sand, and it couldn't recharge."
+    }
+  ]
+}
