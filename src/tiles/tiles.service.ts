@@ -37,4 +37,10 @@ export class TilesService {
 
     return path.join(tile_folder, tile_file_name);
   }
+
+  getMetadataPath(image_type: 'base' | 'annotated') {
+    const folder_path =
+      image_type === 'base' ? base_layer_path : annotation_layer_path;
+    return path.join(folder_path, 'metadata.xml');
+  }
 }

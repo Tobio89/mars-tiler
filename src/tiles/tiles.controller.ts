@@ -8,11 +8,23 @@ import {
 import { TilesService } from './tiles.service';
 import { createReadStream } from 'fs';
 
-@Controller('tiles/:image_name/:z/:coords')
+@Controller('tiles')
 export class TilesController {
   constructor(private readonly tilesService: TilesService) {}
 
-  @Get()
+  @Get(':image_name/metadata.xml')
+  getMetadata(@Param('image_name') image_name: string): StreamableFile {
+    if (image_name === 'base' || image_name === 'annotated') {
+      const metadataFilePath = this.tilesService.getMetadataPath(image_name);
+      const file = createReadStream(metadataFilePath);
+      return new StreamableFile(file);
+    }
+    throw new NotFoundException(
+      'Invalid image name: no metadata found for that image',
+    );
+  }
+
+  @Get(':image_name/:z/:coords')
   getTile(
     @Param('image_name') image_name: string,
     @Param('z') z: number,
@@ -24,6 +36,8 @@ export class TilesController {
       const file = createReadStream(tilePath);
       return new StreamableFile(file);
     }
-    throw new NotFoundException('Invalid image name');
+    throw new NotFoundException(
+      'Invalid image name: no tiles found for that image',
+    );
   }
 }
