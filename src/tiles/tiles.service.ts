@@ -29,12 +29,27 @@ export class TilesService {
     return `mars-d4-annotated_${z}_${x}_${y}.png`;
   }
 
+  private makeAnnotatedV2TileFileName(z: number, x: string, y: string) {
+    return `mars-d4-annotated-rg_${z}_${x}_${y}.png`;
+  }
+
   getTilePath(image_type: string, z: number, coords: string) {
     const { x, y } = this.getCoordsFromString(coords);
-    const tile_file_name =
-      image_type === 'base'
-        ? this.makeBaseTileFileName(z, x, y)
-        : this.makeAnnotatedTileFileName(z, x, y);
+    let tile_file_name = ''
+    switch (image_type) {
+      case 'annotated-v2':
+        tile_file_name = this.makeAnnotatedV2TileFileName(z, x, y)
+        break
+      case 'annotated':
+        tile_file_name = this.makeAnnotatedTileFileName(z, x, y)
+        break
+      case 'base':
+      default:
+        tile_file_name = this.makeBaseTileFileName(z, x, y)
+        break
+    }
+
+
 
     const tile_folder = this.getLayerPath(image_type)
 
