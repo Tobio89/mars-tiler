@@ -1,16 +1,20 @@
 import { Injectable } from '@nestjs/common';
 import path from 'path';
 
-const base_layer_path = path.join(process.cwd(), 'assets', 'mars-d4', 'base');
-const annotation_layer_path = path.join(
-  process.cwd(),
-  'assets',
-  'mars-d4',
-  'annotated',
-);
-
 @Injectable()
 export class TilesService {
+
+  public validImageType = ['base', 'annotated', 'annotated-v2']
+
+  public getLayerPath(image_type: string) {
+    return path.join(
+      process.cwd(),
+      'assets',
+      'mars-d4',
+      image_type,
+    );
+  }
+
   private getCoordsFromString(coords: string) {
     const coordsOnly = coords.replace('.png', '');
     const [y, x] = coordsOnly.split('_');
@@ -25,22 +29,35 @@ export class TilesService {
     return `mars-d4-annotated_${z}_${x}_${y}.png`;
   }
 
-  getTilePath(image_type: 'base' | 'annotated', z: number, coords: string) {
-    const { x, y } = this.getCoordsFromString(coords);
-    const tile_file_name =
-      image_type === 'base'
-        ? this.makeBaseTileFileName(z, x, y)
-        : this.makeAnnotatedTileFileName(z, x, y);
+  private makeAnnotatedV2TileFileName(z: number, x: string, y: string) {
+    return `mars-d4-annotated-rg_${z}_${x}_${y}.png`;
+  }
 
-    const tile_folder =
-      image_type === 'base' ? base_layer_path : annotation_layer_path;
+  getTilePath(image_type: string, z: number, coords: string) {
+    const { x, y } = this.getCoordsFromString(coords);
+    let tile_file_name = ''
+    switch (image_type) {
+      case 'annotated-v2':
+        tile_file_name = this.makeAnnotatedV2TileFileName(z, x, y)
+        break
+      case 'annotated':
+        tile_file_name = this.makeAnnotatedTileFileName(z, x, y)
+        break
+      case 'base':
+      default:
+        tile_file_name = this.makeBaseTileFileName(z, x, y)
+        break
+    }
+
+
+
+    const tile_folder = this.getLayerPath(image_type)
 
     return path.join(tile_folder, tile_file_name);
   }
 
-  getMetadataPath(image_type: 'base' | 'annotated') {
-    const folder_path =
-      image_type === 'base' ? base_layer_path : annotation_layer_path;
+  getMetadataPath(image_type: string) {
+    const folder_path = this.getLayerPath(image_type)
     return path.join(folder_path, 'metadata.xml');
   }
 }

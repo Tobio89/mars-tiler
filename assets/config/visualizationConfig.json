@@ -36,6 +36,15 @@
       }
     }
   ],
+  "heatmapLayers": [
+    {
+      "label": "Elevation",
+      "legend": {
+        "color": "#5f9b1c",
+        "shape": "square"
+      }
+    }
+  ],
   "pointLayers": [
     {
       "label": "Mountains",
