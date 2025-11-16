@@ -15,4 +15,20 @@ describe('DataController', () => {
   it('should be defined', () => {
     expect(controller).toBeDefined();
   });
+
+  it('should return mountain data correctly', () => {
+    const data = controller.getLocaleData('mountains');
+    expect(data).toBeDefined();
+    expect(Array.isArray(data)).toBe(true);
+  });
+
+  it('should return mission site data correctly', () => {
+    const data = controller.getLocaleData('missionSites');
+    expect(data).toBeDefined();
+    expect(Array.isArray(data)).toBe(true);
+  });
+
+  it('should throw and error for unknown locale', () => {
+    expect(() => controller.getLocaleData('unknown-locale')).toThrow();
+  });
 });
