@@ -20,7 +20,7 @@ export class TilesController {
       return new StreamableFile(file);
     }
     throw new NotFoundException(
-      'Invalid image name: no metadata found for that image',
+      'Invalid image name: no metadata found for that image: ' + image_name,
     );
   }
 
@@ -30,10 +30,14 @@ export class TilesController {
     @Param('z') z: number,
     @Param('coords') coords: string,
   ): StreamableFile {
-    const image_base_name = image_name.replace('_files', '')
+    const image_base_name = image_name.replace('_files', '');
 
     if (this.tilesService.validImageType.includes(image_base_name)) {
-      const tilePath = this.tilesService.getTilePath(image_base_name, z, coords);
+      const tilePath = this.tilesService.getTilePath(
+        image_base_name,
+        z,
+        coords,
+      );
       const file = createReadStream(tilePath);
       return new StreamableFile(file);
     }
