@@ -15,8 +15,13 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return correct startup message', () => {
+      const hello = appController.getHello();
+      expect(hello).toContain('Mars Tiler');
+      expect(hello).toMatch(/running on port \d+/);
+      expect(hello).toMatch(
+        /listening at http:\/\/localhost:3000|listening at http:\/\/.+/,
+      );
     });
   });
 });
